@@ -37,13 +37,13 @@ with st.sidebar:
     st.title("🌟 Navigation")
     choice = st.radio(
         "Choose a Page",
-        ["Workshop Showcase", "PCEP-30 Python Certification", "WHS Tech Course", "📝 Register Now"],
+        ["Student Workshop", "PCEP-30 Python Certification", "WHS Tech Course", "📝 Register Now"],
         index=0
     )
 
     st.markdown("---")
     st.markdown("### 📧 Contact Us")
-    st.markdown("Email: info@premieracademy.com")
+    st.markdown("Email: khaulannon@gmail.com")
     st.markdown("📞 Phone: (626) 977-3921")
 
 
