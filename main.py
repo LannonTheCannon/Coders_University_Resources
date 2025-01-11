@@ -37,7 +37,7 @@ with st.sidebar:
     st.title("🌟 Navigation")
     choice = st.radio(
         "Choose a Page",
-        ["Student Workshop", "PCEP-30 Python Certification", "WHS Tech Course", "📝 Register Now"],
+        ["Workshop Showcase", "PCEP-30 Python Certification", "📝 Register Now"],
         index=0
     )
 
@@ -62,110 +62,55 @@ def get_countdown():
 
 # Main Content
 if choice == "Workshop Showcase":
-
-    # Header with gradient
     st.markdown("""
-        <h1 style='text-align: center; color: #1F75FE; 
-        background: linear-gradient(to right, #FF69B4, #4B0082); 
-        padding: 20px; border-radius: 10px; color: white;'>
-        🎉 AI x Python Workshop Showcase 🎉
+        <h1 style='text-align: center; color: white; 
+        background: linear-gradient(to right, #FF8C00, #FF4500); 
+        padding: 20px; border-radius: 10px;'>
+        💻 Student Coding Workshop
         </h1>
         """, unsafe_allow_html=True)
 
-    if choice == "Workshop Showcase":
-        # Header with gradient (previous code remains)
+    tab1, tab2 = st.tabs(["🏫 Group Classes", "👤 1-on-1 Sessions"])
 
-        # Add Countdown Timer
-        st.markdown("""
-            <h2 style='text-align: center; color: #1F75FE; margin-top: 20px;'>
-            ⏳ Countdown to Showcase
-            </h2>
-        """, unsafe_allow_html=True)
+    with tab1:
+        st.markdown("### 👥 Group Classes")
+        st.write("""
+        Join our collaborative learning environment where students work together 
+        to master Python programming concepts while having fun!
+        """)
 
-        # Create placeholder for countdown
-        countdown_placeholder = st.empty()
+        st.success("""
+        #### Benefits:
+        - Interactive group projects
+        - Peer programming practice
+        - Team problem-solving
+        - Competitive coding challenges
+        - Affordable group rates
+        """)
 
+    with tab2:
+        st.markdown("### 🎯 1-on-1 Sessions")
+        st.write("""
+        Get personalized attention and custom-paced learning with our 
+        dedicated instructors.
+        """)
 
-        # Display countdown in columns
-        def display_countdown():
-            days, hours, minutes, seconds = get_countdown()
-            col1, col2, col3, col4 = st.columns(4)
+        st.info("""
+        #### Advantages:
+        - Flexible scheduling
+        - Personalized curriculum
+        - Focus on your specific needs
+        - Rapid progress tracking
+        - Direct feedback and support
+        """)
 
-            with col1:
-                st.markdown(f"""
-                    <div style='background-color: #FF69B4; padding: 20px; border-radius: 10px; text-align: center;'>
-                        <h1 style='color: white; margin: 0;'>{days}</h1>
-                        <p style='color: white; margin: 0;'>Days</p>
-                    </div>
-                """, unsafe_allow_html=True)
+    # Success Stories
+    st.markdown("### 🌟 Student Success Stories")
+    st.markdown("""
+    > "The course helped me ace my Tech and Innovation test!" - *Sarah L.*
 
-            with col2:
-                st.markdown(f"""
-                    <div style='background-color: #4B0082; padding: 20px; border-radius: 10px; text-align: center;'>
-                        <h1 style='color: white; margin: 0;'>{hours}</h1>
-                        <p style='color: white; margin: 0;'>Hours</p>
-                    </div>
-                """, unsafe_allow_html=True)
-
-            with col3:
-                st.markdown(f"""
-                    <div style='background-color: #FF69B4; padding: 20px; border-radius: 10px; text-align: center;'>
-                        <h1 style='color: white; margin: 0;'>{minutes}</h1>
-                        <p style='color: white; margin: 0;'>Minutes</p>
-                    </div>
-                """, unsafe_allow_html=True)
-
-            with col4:
-                st.markdown(f"""
-                    <div style='background-color: #4B0082; padding: 20px; border-radius: 10px; text-align: center;'>
-                        <h1 style='color: white; margin: 0;'>{seconds}</h1>
-                        <p style='color: white; margin: 0;'>Seconds</p>
-                    </div>
-                """, unsafe_allow_html=True)
-
-
-        # Display initial countdown
-        with countdown_placeholder.container():
-            display_countdown()
-
-        # Add some space after countdown
-        st.markdown("<br>", unsafe_allow_html=True)
-
-    # Event Details
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.info("📅 Date: January 15th, 2025")
-    with col2:
-        st.info("⏰ Time: 6:00 PM - 7:00 PM")
-    with col3:
-        st.info("📍 Location: Premier Academy")
-
-    # Description
-    st.markdown("## 🌟 Join Us for an Evening of Innovation!")
-    st.write("""
-    Watch as our talented students showcase their innovative projects combining 
-    Python programming with OpenAI's cutting-edge technology. Experience firsthand 
-    how the next generation of programmers is shaping the future!
+    > "I went from struggling with basic concepts to confidently building my own programs." - *David K.*
     """)
-
-    # Presenters
-    st.markdown("## 🎤 Our Amazing Presenters")
-    col1, col2, col3 = st.columns(3)
-
-    presenters = [
-        {"name": "Bailey Tang", "project": "Portfolio x OpenAI"},
-        {"name": "Stanley Zhu", "project": "Portfolio x OpenAI"},
-        {"name": "Shawn Zhu", "project": "Portfolio x OpenAI"}
-    ]
-
-    for presenter, col in zip(presenters, [col1, col2, col3]):
-        with col:
-            st.markdown(f"""
-            <div style='background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;'>
-                <h3 style='color: #1F75FE;'>{presenter['name']}</h3>
-                <p style='color: #4B0082;'>{presenter['project']}</p>
-            </div>
-            """, unsafe_allow_html=True)
 
 elif choice == "PCEP-30 Python Certification":
     st.markdown("""
